@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        li {
+            list-style: none;
+        }
+        
+        #myDiv {
+            width: 500px;
+            margin: 0 auto;
+            padding: 0;
+            text-align: center;
+        }
+        
+        #myDiv ul {
+            margin: 0;
+            padding: 10px 0;
+        }
+        
+        #myDiv li {
+            display: inline;
+        }
+        
+        #box {
+            margin: 0 auto;
+            width: 200px;
+            height: 200px;
+            padding: 0;
+            background-color: skyblue;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="myDiv">
+        <ul>
+            <li><button id="w">宽度</button></li>
+            <li><button id="h">高度</button></li>
+            <li><button id="c">颜色</button></li>
+            <li><button id="n">隐藏</button></li>
+            <li><button id="b">显示</button></li>
+            <li><button id="r">重置</button></li>
+        </ul>
+        <div id="box"></div>
+    </div>
+    <script>
+        let div = document.getElementById("myDiv");
+        let box = document.getElementById("box");
+        div.addEventListener("click", function(event) {
+            switch (event.target.id) {
+                case "w":
+                    box.style.width = "400px";
+                    break;
+                case "h":
+                    box.style.height = "400px";
+                    break;
+                case "c":
+                    box.style.backgroundColor = "pink";
+                    break;
+                case "n":
+                    box.style.display = "none";
+                    break;
+                case "b":
+                    box.style.display = "block";
+                    break;
+                case "r":
+                    box.style = {
+                        width: "200px",
+                        height: "200px",
+                        backgroundColor: "skyblue",
+                        display: "block"
+                    };
+                default:
+                    break;
+            }
+        }, false)
+    </script>
+</body>
+
+</html>
